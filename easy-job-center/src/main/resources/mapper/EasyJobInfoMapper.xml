@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="lucky.job.center.dao.EasyJobInfoMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="lucky.job.center.entity.EasyJobInfo">
+        <id column="id" property="id"/>
+        <result column="job_group" property="jobGroup"/>
+        <result column="job_desc" property="jobDesc"/>
+        <result column="create_time" property="createTime"/>
+        <result column="update_time" property="updateTime"/>
+        <result column="author" property="author"/>
+        <result column="alarm_email" property="alarmEmail"/>
+        <result column="schedule_type" property="scheduleType"/>
+        <result column="schedule_conf" property="scheduleConf"/>
+        <result column="misfire_strategy" property="misfireStrategy"/>
+        <result column="executor_route_strategy" property="executorRouteStrategy"/>
+        <result column="executor_handler" property="executorHandler"/>
+        <result column="executor_param" property="executorParam"/>
+        <result column="executor_block_strategy" property="executorBlockStrategy"/>
+        <result column="executor_timeout" property="executorTimeout"/>
+        <result column="executor_fail_retry_count" property="executorFailRetryCount"/>
+        <result column="glue_type" property="glueType"/>
+        <result column="glue_source" property="glueSource"/>
+        <result column="glue_remark" property="glueRemark"/>
+        <result column="glue_update_time" property="glueUpdateTime"/>
+        <result column="child_job_id" property="childJobId"/>
+        <result column="trigger_status" property="triggerStatus"/>
+        <result column="trigger_last_time" property="triggerLastTime"/>
+        <result column="trigger_next_time" property="triggerNextTime"/>
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, job_group, job_desc, create_time, update_time, author, alarm_email, schedule_type, schedule_conf, misfire_strategy, executor_route_strategy, executor_handler, executor_param, executor_block_strategy, executor_timeout, executor_fail_retry_count, glue_type, glue_source, glue_remark, glue_update_time, child_job_id, trigger_status, trigger_last_time, trigger_next_time
+    </sql>
+
+    <select id="scheduleJobQuery" parameterType="java.util.HashMap" resultMap="BaseResultMap">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM easy_job_info AS t
+        WHERE t.trigger_status = 1
+        and t.trigger_next_time <![CDATA[ <= ]]> #{maxNextTime}
+        ORDER BY id ASC
+        LIMIT #{pageSize}
+    </select>
+
+</mapper>

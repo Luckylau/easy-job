@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="lucky.job.center.dao.EasyJobGroupMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="lucky.job.center.entity.EasyJobGroup">
+        <id column="id" property="id"/>
+        <result column="app_name" property="appName"/>
+        <result column="title" property="title"/>
+        <result column="address_type" property="addressType"/>
+        <result column="address_list" property="addressList"/>
+        <result column="create_time" property="createTime"/>
+        <result column="update_time" property="updateTime"/>
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, app_name, title, address_type, address_list, create_time, update_time
+    </sql>
+
+</mapper>

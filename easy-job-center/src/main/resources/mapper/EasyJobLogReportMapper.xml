@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="lucky.job.center.dao.EasyJobLogReportMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="lucky.job.center.entity.EasyJobLogReport">
+        <id column="id" property="id"/>
+        <result column="trigger_day" property="triggerDay"/>
+        <result column="running_count" property="runningCount"/>
+        <result column="suc_count" property="sucCount"/>
+        <result column="fail_count" property="failCount"/>
+        <result column="create_time" property="createTime"/>
+        <result column="update_time" property="updateTime"/>
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, trigger_day, running_count, suc_count, fail_count, create_time, update_time
+    </sql>
+
+</mapper>
