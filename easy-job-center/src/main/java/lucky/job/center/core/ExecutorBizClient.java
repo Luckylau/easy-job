@@ -2,23 +2,24 @@ package lucky.job.center.core;
 
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
-import lucky.job.center.util.GsonTool;
-import lucky.job.center.util.OkHttpUtil;
 import lucky.job.core.biz.ExecutorBiz;
 import lucky.job.core.model.*;
+import lucky.job.core.util.GsonTool;
+import lucky.job.core.util.OkHttpUtil;
 
 import java.util.HashMap;
 import java.util.Map;
+
+import static lucky.job.core.constant.Constants.EASY_JOB_ACCESS_TOKEN;
 
 /**
  * @author: luckylau
  * @Date: 2020/11/27 15:39
  * @Description:
  */
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 public class ExecutorBizClient implements ExecutorBiz {
-    public static final String EASY_JOB_ACCESS_TOKEN = "EASY-JOB-ACCESS-TOKEN";
     private String addressUrl;
     private String accessToken;
 

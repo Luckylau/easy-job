@@ -13,4 +13,12 @@ import lucky.job.center.entity.EasyJobInfo;
  */
 public interface IEasyJobInfoService extends IService<EasyJobInfo> {
 
+    int pageListCount(int offset,
+                      int pagesize,
+                      int jobGroup,
+                      int triggerStatus,
+                      String jobDesc,
+                      String executorHandler,
+                      String author);
+
 }

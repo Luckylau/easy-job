@@ -24,4 +24,21 @@ public class JacksonUtil {
         }
         return null;
     }
+
+    /**
+     * string --> bean、Map、List(array)
+     *
+     * @param jsonStr
+     * @param clazz
+     * @return obj
+     * @throws Exception
+     */
+    public static <T> T readValue(String jsonStr, Class<T> clazz) {
+        try {
+            return getInstance().readValue(jsonStr, clazz);
+        } catch (Exception e) {
+            log.error("readValue", e);
+        }
+        return null;
+    }
 }

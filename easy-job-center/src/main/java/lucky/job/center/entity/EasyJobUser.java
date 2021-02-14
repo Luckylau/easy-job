@@ -3,6 +3,7 @@ package lucky.job.center.entity;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.extension.activerecord.Model;
+import org.springframework.util.StringUtils;
 
 import java.io.Serializable;
 
@@ -95,5 +96,21 @@ public class EasyJobUser extends Model<EasyJobUser> {
                 ", role=" + role +
                 ", permission=" + permission +
                 "}";
+    }
+
+    public boolean validPermission(int jobGroup) {
+        if (this.role == 1) {
+            return true;
+        } else {
+            if (StringUtils.hasText(this.permission)) {
+                for (String permissionItem : this.permission.split(",")) {
+                    if (String.valueOf(jobGroup).equals(permissionItem)) {
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+
     }
 }

@@ -24,7 +24,7 @@ public enum ExecutorRouteStrategyEnum {
     LEAST_FREQUENTLY_USED("jobconf_route_lfu", new ExecutorRouteLFU()),
     LEAST_RECENTLY_USED("jobconf_route_lru", new ExecutorRouteLRU()),
     FAILOVER("jobconf_route_failover", new ExecutorRouteFailover()),
-    BUSYOVER("jobconf_route_busyover", new ExecutorRouteBusyover()),
+    BUSYOVER("jobconf_route_busyover", new ExecutorRouteBusyOver()),
     SHARDING_BROADCAST("jobconf_route_shard", null);
 
     private String title;

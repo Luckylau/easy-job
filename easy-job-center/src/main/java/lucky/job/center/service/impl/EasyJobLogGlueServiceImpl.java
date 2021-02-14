@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import lucky.job.center.dao.EasyJobLogGlueMapper;
 import lucky.job.center.entity.EasyJobLogGlue;
 import lucky.job.center.service.IEasyJobLogGlueService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
@@ -17,4 +18,11 @@ import org.springframework.stereotype.Service;
 @Service
 public class EasyJobLogGlueServiceImpl extends ServiceImpl<EasyJobLogGlueMapper, EasyJobLogGlue> implements IEasyJobLogGlueService {
 
+    @Autowired
+    private EasyJobLogGlueMapper easyJobLogGlueMapper;
+
+    @Override
+    public int removeOld(int jobId, int limit) {
+        return 0;
+    }
 }

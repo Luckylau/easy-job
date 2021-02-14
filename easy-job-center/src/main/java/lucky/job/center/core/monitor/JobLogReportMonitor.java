@@ -3,7 +3,7 @@ package lucky.job.center.core.monitor;
 import lombok.extern.slf4j.Slf4j;
 import lucky.job.center.dao.EasyJobLogMapper;
 import lucky.job.center.dao.EasyJobLogReportMapper;
-import lucky.job.center.util.EasyJobThreadFactory;
+import lucky.job.core.util.EasyJobThreadFactory;
 
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;

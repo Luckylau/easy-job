@@ -1,7 +1,7 @@
 package lucky.job.center.web;
 
-import lucky.job.center.exception.EasyJobException;
 import lucky.job.center.util.JacksonUtil;
+import lucky.job.core.exception.EasyJobException;
 import lucky.job.core.model.ReturnT;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

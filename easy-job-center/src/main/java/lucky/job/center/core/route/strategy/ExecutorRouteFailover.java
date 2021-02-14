@@ -12,6 +12,7 @@ import java.util.List;
  * @Description:
  */
 public class ExecutorRouteFailover implements ExecutorRouter {
+
     @Override
     public ReturnT<String> route(TriggerParam triggerParam, List<String> addressList) {
         return null;

@@ -18,4 +18,16 @@
         id, job_id, glue_type, glue_source, glue_remark, create_time, update_time
     </sql>
 
+    <delete id="removeOld">
+		DELETE FROM easy_job_log_glue
+		WHERE id NOT in(
+			SELECT id FROM(
+				SELECT id FROM easy_job_log_glue
+				WHERE `job_id` = #{jobId}
+				ORDER BY update_time desc
+				LIMIT 0, #{limit}
+			) t1
+		) AND `job_id` = #{jobId}
+	</delete>
+
 </mapper>

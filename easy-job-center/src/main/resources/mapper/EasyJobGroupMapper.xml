@@ -18,4 +18,35 @@
         id, app_name, title, address_type, address_list, create_time, update_time
     </sql>
 
+
+    <select id="pageList" parameterType="java.util.HashMap" resultMap="EasyJobGroup">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM easy_job_group AS t
+        <trim prefix="WHERE" prefixOverrides="AND | OR">
+            <if test="appname != null and appname != ''">
+                AND t.app_name like CONCAT(CONCAT('%', #{appname}), '%')
+            </if>
+            <if test="title != null and title != ''">
+                AND t.title like CONCAT(CONCAT('%', #{title}), '%')
+            </if>
+        </trim>
+        ORDER BY t.app_name, t.title, t.id ASC
+        LIMIT #{offset}, #{pagesize}
+    </select>
+
+
+    <select id="pageListCount" parameterType="java.util.HashMap" resultType="int">
+        SELECT count(1)
+        FROM easy_job_group AS t
+        <trim prefix="WHERE" prefixOverrides="AND | OR">
+            <if test="appname != null and appname != ''">
+                AND t.app_name like CONCAT(CONCAT('%', #{appname}), '%')
+            </if>
+            <if test="title != null and title != ''">
+                AND t.title like CONCAT(CONCAT('%', #{title}), '%')
+            </if>
+        </trim>
+    </select>
+
 </mapper>

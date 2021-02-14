@@ -1,7 +1,7 @@
 package lucky.job.center.core.monitor;
 
 import lucky.job.center.core.AbstractLifeCycle;
-import lucky.job.center.exception.LifeCycleException;
+import lucky.job.core.exception.LifeCycleException;
 
 /**
  * @author: luckylau
