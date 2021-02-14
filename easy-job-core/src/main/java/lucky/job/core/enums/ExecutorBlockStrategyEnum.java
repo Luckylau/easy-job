@@ -1,7 +1,7 @@
 package lucky.job.core.enums;
 
 /**
- * @author: liujun
+ * @author: luckylau
  * @Date: 2021/1/13 16:26
  * @Description:
  */
