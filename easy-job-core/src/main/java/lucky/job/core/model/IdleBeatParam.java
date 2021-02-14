@@ -1,17 +1,31 @@
 package lucky.job.core.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
 import java.io.Serializable;
 
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
 public class IdleBeatParam implements Serializable {
 
     private int jobId;
 
 
+    public IdleBeatParam(int jobId) {
+        this.jobId = jobId;
+    }
+
+    public IdleBeatParam() {
+    }
+
+    public int getJobId() {
+        return jobId;
+    }
+
+    public void setJobId(int jobId) {
+        this.jobId = jobId;
+    }
+
+    @Override
+    public String toString() {
+        return "IdleBeatParam{" +
+                "jobId=" + jobId +
+                '}';
+    }
 }

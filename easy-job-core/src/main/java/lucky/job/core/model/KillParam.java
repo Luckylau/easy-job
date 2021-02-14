@@ -1,9 +1,5 @@
 package lucky.job.core.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
 import java.io.Serializable;
 
 /**
@@ -11,9 +7,28 @@ import java.io.Serializable;
  * @Date: 2020/11/27 15:32
  * @Description:
  */
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
 public class KillParam implements Serializable {
     private int jobId;
+
+    public KillParam(int jobId) {
+        this.jobId = jobId;
+    }
+
+    public KillParam() {
+    }
+
+    @Override
+    public String toString() {
+        return "KillParam{" +
+                "jobId=" + jobId +
+                '}';
+    }
+
+    public int getJobId() {
+        return jobId;
+    }
+
+    public void setJobId(int jobId) {
+        this.jobId = jobId;
+    }
 }
